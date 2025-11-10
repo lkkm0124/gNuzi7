@@ -13,7 +13,7 @@ if st.button("BMI 계산"):
     
     # BMI 상태 판정
     if bmi < 18.5:
-        status = "저체중입니다.dyyuuuiuuerre1111113"
+        status = "저체중입니다.                                                                    "
     elif 18.5 <= bmi < 24.9:
         status = "정상입니다"
     elif 25 <= bmi < 29.9:
