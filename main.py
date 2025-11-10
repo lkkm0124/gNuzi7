@@ -15,11 +15,11 @@
     #if bmi < 18.5:
         #status = "저체중입니다."
     #elif 18.5 <= bmi < 24.9:
-        status = "정상입니다."
+        #status = "정상입니다."
     #elif 25 <= bmi < 29.9:
-        status = "과체중입니다."
+        #status = "과체중입니다."
     #else:
-        status = "비만입니다."
+        #status = "비만입니다."
 
     #st.write(f"당신의 BMI는 **{bmi}** 입니다.")
     #st.write(f"체중 상태: **{status}**")
