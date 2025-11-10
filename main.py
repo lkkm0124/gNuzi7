@@ -1,21 +1,25 @@
 import streamlit as st
 
-st.title('간단한 번역기 (설치 없이 가능)')
+st.title("BMI 계산기")
 
-# 예제 사전
-translation_dict = {
-    '안녕하세요': 'Hello',
-    '감사합니다': 'Thank you',
-    '사랑': 'Love',
-    '학교': 'School'
-}
+# 사용자 입력
+weight = st.number_input("몸무게(kg)를 입력하세요:", min_value=1.0, max_value=300.0, value=60.0)
+height = st.number_input("키(cm)를 입력하세요:", min_value=50.0, max_value=250.0, value=170.0)
 
-text = st.text_input('번역할 한국어 문장을 입력해주세요:')
-
-if st.button('번역하기'):
-    if text:
-        translated = translation_dict.get(text, '사전에 없는 단어입니다.')
-        st.write('번역 결과:')
-        st.write(translated)
+if st.button("BMI 계산"):
+    height_m = height / 100  # cm -> m 변환
+    bmi = weight / (height_m ** 2)
+    bmi = round(bmi, 2)
+    
+    # BMI 상태 판정
+    if bmi < 18.5:
+        status = "저체중입니다. 좀 먹으세요 ㅋㅋㅋ"
+    elif 18.5 <= bmi < 24.9:
+        status = "정상"
+    elif 25 <= bmi < 29.9:
+        status = "과체중입니다. 좀 줄이세요 ㅋㅋㅋ"
     else:
-        st.warning('문장을 입력해주세요!')
+        status = "비만....뭐임??"
+
+    st.write(f"당신의 BMI는 **{bmi}** 입니다.")
+    st.write(f"체중 상태: **{status}**")
