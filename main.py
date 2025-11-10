@@ -3,8 +3,8 @@ import streamlit as st
 st.title("BMI 계산기")
 
 # 사용자 입력
-weight = st.number_input("몸무게(kg)를 입력하세요:", min_value=1.0, max_value=1000.0, value=0.0)
-height = st.number_input("키(cm)를 입력하세요:", min_value=50.0, max_value=1000.0, value=0.0)
+weight = st.number_input("몸무게(kg)를 입력하세요:", min_value=0.0, max_value=1000.0, value=0.0)
+height = st.number_input("키(cm)를 입력하세요:", min_value=0.0, max_value=1000.0, value=0.0)
 
 if st.button("BMI 계산"):
     height_m = height / 100  # cm -> m 변환
