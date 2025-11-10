@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title("☆BMI 계산기☆")
+st.title("⚖️BMI 계산기⚖️")
 
 
 weight = st.number_input("몸무게(kg)를 입력하세요:", min_value=0.0, max_value=1000.0, value=0.0)
